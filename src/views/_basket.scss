@@ -1,0 +1,9 @@
+.basket{
+  color: $bg-basic;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

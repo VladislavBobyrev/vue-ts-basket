@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+@import "./utils/resets";
+@import "./utils/vriable";
+@import "./utils/scroll";
+@import "./utils/global";
+@import "./utils/mixins";
+
+//=====================================================
+//                 LAYOUTS
+//=====================================================
+
+//=====================================================
+//                 PAGES
+//=====================================================
+@import '../views/basket';
+//=====================================================
+//                 COMPONENTS
+//=====================================================
+@import "../components/header/header";
+@import "../components/main/main";
+@import "../components/card/card";
+@import "../components/card-basket/card-basket";

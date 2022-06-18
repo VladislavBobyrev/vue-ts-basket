@@ -1,0 +1,13 @@
+.basket{
+  .card{
+    display: flex;
+    background: $bg-accent;
+  }
+  .card-header{
+    align-items: center;
+    gap: 1rem ;
+  }
+  .card-body{
+    display: flex;
+  }
+}

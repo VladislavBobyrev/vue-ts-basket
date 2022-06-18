@@ -1,10 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const appAxios = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/posts',
-  headers: {
-    accept: 'app;ication/json',
-  },
-});
+  baseURL: 'https://jsonplaceholder.typicode.com/',
+})
 
-export default appAxios;
+export default appAxios

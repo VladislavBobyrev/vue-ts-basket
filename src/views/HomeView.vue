@@ -1,21 +1,38 @@
 <template>
-  <div class="home">
-    <div> карточки товаров + корзина с удалением карточек и увеличением количества</div>
-  </div>
+  <section class="cards">
+    <AppCard v-for="card in data" :key="card.id"
+    :body="card.body"
+    :id="card.id"
+    :title="card.title"
+    :userId="card.userId"
+    />
+  </section>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
-import axios from '@/api/axios';
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
+import AppCard from '@/components/card/AppCard.vue'
+
+
 
 export default defineComponent({
   name: 'HomeView',
-  components: {
-  },
+  components: { AppCard },
   setup()
   {
-    const data = axios('/').then(i => i.data).then(i=> console.log(i))
-    console.log(data);
+    const store = useStore()
+
+    const getAsyncCard = async () =>
+    {
+      await store.dispatch('getAsyncCard')
+    }
+    getAsyncCard()
+
+    const data = computed(() => (store.state.data.length > 0 ? store.state.data : []))
+    return {
+      data,
+    }
   },
-});
+})
 </script>
